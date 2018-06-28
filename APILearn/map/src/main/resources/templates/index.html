@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+    <title>稚子候门</title>
+    <link rel="stylesheet" href="./styles/map.css" />
+    <script type="text/javascript"  src=".\script\jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.4.7&key=bfbbcb864bfb8e93f60ff8debadb8851"></script>
+</head>
+<body>
+ <!--<div   id="container">-->
+ <!--</div>-->
+ <div >
+    <form  id="city_weather" >
+        <input type="text"  id="city"   autocomplete="off"/>
+        <button id="submit" class="button" > 查询</button>
+    </form>
+
+     </table>
+ </div>
+ <script>
+     var key = 'bfbbcb864bfb8e93f60ff8debadb8851';
+    $('#submit').click(toCode);
+    function toCode() {
+        var city = $("#city").val();
+        $.ajax({
+            cache : true,
+            type : "get",
+            url : "http://restapi.amap.com/v3/weather/weatherInfo?key="+key+"&city="+city,
+            dataType:"json",
+            async:false,
+            success : function(result) {
+                if (result.status == 1) {
+                   // $("#weather").empty();
+                    var lives = result.lives;
+                   // for(var i = 0;i<lives.length;i++){
+                        var province = lives[0].province;
+                        var city1 = lives[0].city;
+                        var weather = lives[0].weather;
+                        var temperature = lives[0].temperature;
+                        var winddirection = lives[0].winddirection;
+                        var windpower = lives[0].windpower;
+                        var humidity = lives[0].humidity;
+                        var reporttime = lives[0].reporttime;
+                        alert(province+city1+"  现在"+weather+"  温度"+temperature+"  风力"+windpower);
+                        var str = "";
+                        str += "<tr>";
+                        str += "<td>"+province+"</td>";
+                        str += "<td>"+city1+"</td>";
+                        str += "<td>"+weather+"</td>";
+                        str += "<td>"+temperature+"</td>";
+                        str += "<td>"+winddirection+"</td>";
+                        str += "<td>"+windpower+"</td>";
+                        str += "<td>"+humidity+"</td>";
+                        str += "<td>"+reporttime+"</td>";
+                        str += "</tr>";
+                        $("#weather").append(str);
+                  //  }
+                } else {
+                   alert("查询失败");
+                }
+
+            }
+        });
+    }
+
+ </script>
+</body>
+</html>
