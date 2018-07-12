@@ -7,6 +7,7 @@ map = new AMap.Map('calendar_grid', {
     zoom:11
 });
 
+
 //添加控件
 map.plugin([
     'AMap.ToolBar',
