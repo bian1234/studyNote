@@ -30,7 +30,7 @@
     <div class="head clearfix">
         <a class="logo" href="http://www.moji.com/">
             <!--<img src="https://h5tq.moji.com/tianqi/assets//images/index/i_logo.png" alt="墨迹天气" height="31">-->
-            <img src="./image/logo.png" alt="稚子候门" height="59">
+            <img src="./image/logo.png" alt="稚子候门" >
         </a>
         <!---->
         <div class="nav">
@@ -38,7 +38,7 @@
             <a href="https://tianqi.moji.com" target="_blank">墨迹天气</a>
             <a href="https://www.amap.com/" target="_blank">高德地图</a>
             <a href="http://123.206.78.174/" target="_blank">稚子候门</a>
-            <!--<a href="http://www.moji.com/about/">关于稚子候门</a>-->
+            <a href="http://localhost:8088/readme">关于稚子候门</a>
         </div>
     </div>
 </div>
@@ -52,20 +52,11 @@
 <div class="wrap clearfix">
     <div class="comm_box">
         <!--面包屑-->
-        <div class="crumb clearfix">
+        <div class="crumb clearfix"  id="address100">
             <ul>
-                <li>
-                    <a href="https://tianqi.moji.com">天气</a>
-                    <i></i>
-                </li>
-                <li>
-                    <a href="https://tianqi.moji.com/weather/china">中国</a>
-                    <i></i>
-                </li>
-                <li>
-                    <a href="https://tianqi.moji.com/weather/china/beijing">北京市</a>
-                    <i></i>
-                </li>
+                <li><a href="https://tianqi.moji.com">天气</a><i></i></li>
+                <li><a href="https://tianqi.moji.com/weather/china">中国</a><i></i></li>
+                <li><a href="https://tianqi.moji.com/weather/china/beijing">北京市</a><i></i></li>
                 <li>大兴区</li>
             </ul>
         </div>
@@ -73,43 +64,12 @@
     <!---->
 </div>
 <div class="wrap clearfix wea_info">
-    <div class="left">
-        <div class="wea_alert clearfix">
-            <ul>
-                <li>
-                    <a href="https://tianqi.moji.com/aqi/china/beijing/daxing-district">
-                        <span class="level level_1">
-                            <img
-                                    src="https://h5tq.moji.com/tianqi/assets/images/aqi/1.png"
-                                    alt="38 优">
-                        </span>
-                        <em>38 优</em>
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <div class="wea_weather clearfix">
-            <em>28</em>
-            <span><img src="https://h5tq.moji.com/tianqi/assets/images/weather/w2.png" alt="阴"></span>
-            <b>阴</b>
-            <strong class="info_uptime">今天18:00更新</strong>
-        </div>
-        <div class="wea_about clearfix">
-            <span>湿度 60%</span>
-            <em>东南风2级</em>
-            <b>尾号限行4和9</b>        </div>
-        <div class="wea_tips clearfix">
-            <span>今日天气提示</span>
-            <em>略微偏热，注意衣物变化。</em>
-        </div>
+    <div class="left"  id="current_weather">
+        <!--当前天气实况-->
     </div>
     <div class="right">
         <div class="wea_info_avator">
             <img src="https://h5tq.moji.com/tianqi/assets//images/avator/icon/3.png" alt="墨迹天气 小墨哥">
-            <!--<div id="windows_download">-->
-                <!--<img src="https://h5tq.moji.com/tianqi/assets//images/icon/avator_windows.png" height="35" alt="Windows 下载">-->
-                <!--<a href="http://download.moji001.com/mojiapp/windoz/MoWeatherInstall_1.8.1.1.exe" target="_blank">Windows 下载</a>-->
-            <!--</div>-->
         </div>
     </div>
 </div>
@@ -118,209 +78,168 @@
         <div class="forecast clearfix">
             <div class="g_title">
                 <span>预报</span>
-                <!--<ul class="nav">-->
-                    <!--<li><a href="https://tianqi.moji.com/forecast7/china/beijing/daxing-district">7天预报</a></li>-->
-                    <!--<li><a href="https://tianqi.moji.com/forecast10/china/beijing/daxing-district">10天预报</a></li>-->
-                    <!--<li><a href="https://tianqi.moji.com/forecast15/china/beijing/daxing-district">15天预报</a></li>-->
-                <!--</ul>-->
             </div>
-            <ul class="days clearfix">
-                <li>
-                    <a href="https://tianqi.moji.com/today/china/beijing/daxing-district">今天</a>
-                </li>
-                <li>
-                        <span>
-                            <img src="https://h5tq.moji.com/tianqi/assets/images/weather/w2.png" alt="阴">
-                        </span>
-                    阴                    </li>
-                <li>22° / 30°</li>
-                <li>
-                    <em>东风</em>
-                    <b>3级</b>
-                </li>
-                <li><strong class="level_1">
-                    43 优
-                </strong>
-                </li>
-            </ul>
-            <ul class="days clearfix">
-                <li>
-                    <a href="https://tianqi.moji.com/tommorrow/china/beijing/daxing-district">明天</a>
-                </li>
-                <li>
-                        <span>
-                            <img src="https://h5tq.moji.com/tianqi/assets/images/weather/w4.png" alt="雷阵雨">
-                        </span>
-                    雷阵雨                    </li>
-                <li>21° / 25°</li>
-                <li>
-                    <em>北风</em>
-                    <b>3级</b>
-                </li>
-                <li><strong class="level_1">
-                    45 优
-                </strong>
-                </li>
-            </ul>
-            <ul class="days clearfix">
-                <li>
-                    <a href="https://tianqi.moji.com/tdat/china/beijing/daxing-district">后天</a>
-                </li>
-                <li>
-                        <span>
-                            <img src="https://h5tq.moji.com/tianqi/assets/images/weather/w4.png" alt="雷阵雨">
-                        </span>
-                    雷阵雨                    </li>
-                <li>21° / 27°</li>
-                <li>
-                    <em>东北风</em>
-                    <b>3级</b>
-                </li>
-                <li><strong class="level_2">
-                    63 良
-                </strong>
-                </li>
-            </ul>
-        </div>
 
-        <div class="hours">
-            <div class="g_title">
-                <span>24小时预报</span>
-                <ul class="nav">
-                    <li class="active">温度</li>
-                    <li>风力</li>
+            <div  id="my_forecast">
+                <ul class="days clearfix">
+                    <li>今天</li>
+                    <li>阴</li>
+                    <li>22° / 30°</li>
+                    <li><em>东风</em><b>3级</b></li>
+                    <li><strong class="level_1">43 优</strong></li>
                 </ul>
-            </div>
-            <div class="charts clearfix">
-                <div class="chart chart_temp clearfix" id="chart_temp">
-                    <div class="prev"></div>
-                    <div class="next"></div>
-                    <div class="num">
-                        <span>30°</span>
-                        <span>20°</span>
-                        <span>10°</span>
-                        <span>0°</span>
-                    </div>
-                    <div class="canvas">
-                        <div class="canvas_box">
-                            <canvas width="4000" height="300" id="temp"></canvas>
-                            <div class="canvas_point">
-                                <span></span>
-                                <div>
-                                    <em>29°</em>
-                                    <img src="https://h5tq.moji.com/tianqi/assets//images/weather/w1.png">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="chart chart_wind clearfix" id="chart_wind" style="display: none;">
-                    <div class="prev"></div>
-                    <div class="next"></div>
-                    <div class="num">
-                        <span>30°</span>
-                        <span>20°</span>
-                        <span>10°</span>
-                        <span>0°</span>
-                    </div>
-                    <div class="canvas">
-                        <div class="canvas_box">
-                            <canvas width="4000" height="300" id="wind"></canvas>
-                            <div class="canvas_point">
-                                <span></span>
-                                <div>
-                                    <em>29°</em>
-                                    <img src="https://h5tq.moji.com/tianqi/assets//images/weather/w1.png">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <ul class="days clearfix">
+                    <li>明天</li>
+                    <li>阴</li>
+                    <li>22° / 30°</li>
+                    <li><em>东风</em><b>3级</b></li>
+                    <li><strong class="level_1">43 优</strong></li>
+                </ul>
+                <ul class="days clearfix">
+                    <li>后天</li>
+                    <li>阴</li>
+                    <li>22° / 30°</li>
+                    <li><em>东风</em><b>3级</b></li>
+                    <li><strong class="level_1">43 优</strong></li>
+                </ul>
+                <ul class="days clearfix">
+                    <li>大后天</li>
+                    <li>阴</li>
+                    <li>22° / 30°</li>
+                    <li><em>东风</em><b>3级</b></li>
+                    <li><strong class="level_1">43 优</strong></li>
+                </ul>
             </div>
         </div>
 
 
         <!--生活指数-->
-
-    </div>
-    <div class="right">
-        <!--热门时景-->
-        <div class="liveview liveview_index">
-            <div class="title">
-                <em>热门时景</em>
-                <a href="https://tianqi.moji.com/liveview/china/beijing/daxing-district">更多</a>
+        <div id="live_index">
+            <div class="live_index_title">
+                <h2>生活指数</h2>
+                <span></span>
             </div>
-            <div class="item">
-                <ul>
+            <div class="live_index_grid">
+                <ul class="clearfix">
                     <li>
-                        <a href="https://tianqi.moji.com/liveview/picture/81736828">
-                        <span>
-                            <img
-                                    data-width="1080"
-                                    data-height="1301"
-                                    src="https://cdn.moji002.com/images/sthumb/2017/10/06/15072215250.83494900.1182_android.jpg" alt="四川省凉山彝族自治州盐源县泸沽湖镇亚泸路泸沽湖风景名胜区">
-                        </span>
-                            <h2>四川省凉山彝族自治州盐源县泸沽湖镇亚泸路泸沽湖风景名胜区</h2>
+                        <a href="https://tianqi.moji.com/car/china/beijing/daxing-district" class="clearfix">
+                                          <span><img src="https://h5tq.moji.com/tianqi/assets/images/script/17.png"> </span>
+                            <dl>
+                                <dt>较不适宜</dt>
+                                <dd>洗车</dd>
+                            </dl>
                         </a>
                     </li>
                     <li>
-                        <a href="https://tianqi.moji.com/liveview/picture/81749154">
-                        <span>
-                            <img
-                                    data-width="960"
-                                    data-height="720"
-                                    src="https://cdn.moji002.com/images/sthumb/2017/10/08/15074223300.94412000.1764_android.jpg" alt="安徽省黄山市休宁县溪口镇詹家山">
-                        </span>
-                            <h2>安徽省黄山市休宁县溪口镇詹家山</h2>
+                        <a href="https://tianqi.moji.com/pollution/china/beijing/daxing-district" class="clearfix">
+                                          <span><img src="https://h5tq.moji.com/tianqi/assets/images/script/0.png"></span>
+                            <dl>
+                                <dt>中</dt>
+                                <dd>空气污染扩散</dd>
+                            </dl>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://tianqi.moji.com/dress/china/beijing/daxing-district" class="clearfix">
+                                          <span><img src="https://h5tq.moji.com/tianqi/assets/images/script/20.png"></span>
+                            <dl>
+                                <dt>热</dt>
+                                <dd>穿衣</dd>
+                            </dl>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://tianqi.moji.com/uray/china/beijing/daxing-district" class="clearfix">
+                                          <span><img src="https://h5tq.moji.com/tianqi/assets/images/script/21.png"></span>
+                            <dl>
+                                <dt>弱</dt>
+                                <dd>紫外线</dd>
+                            </dl>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://tianqi.moji.com/makeup/china/beijing/daxing-district" class="clearfix">
+                                          <span><img src="https://h5tq.moji.com/tianqi/assets/images/script/7.png"></span>
+                            <dl>
+                                <dt>控油</dt>
+                                <dd>化妆</dd>
+                            </dl>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://tianqi.moji.com/sport/china/beijing/daxing-district" class="clearfix">
+                              <span><img src="https://h5tq.moji.com/tianqi/assets/images/script/26.png"></span>
+                            <dl>
+                                <dt>适宜</dt>
+                                <dd>运动</dd>
+                            </dl>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://tianqi.moji.com/fish/china/beijing/daxing-district" class="clearfix">
+                            <span><img src="https://h5tq.moji.com/tianqi/assets/images/script/28.png"></span>
+                            <dl>
+                                <dt>较适宜</dt>
+                                <dd>钓鱼</dd>
+                            </dl>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://tianqi.moji.com/cold/china/beijing/daxing-district" class="clearfix">
+                              <span><img src="https://h5tq.moji.com/tianqi/assets/images/script/12.png"></span>
+                            <dl><dt>较易发</dt><dd>感冒</dd>
+                            </dl>
                         </a>
                     </li>
                 </ul>
             </div>
-        </div>            <div class="near">
-        <div class="title">
-            <em>附近地区</em>
-            <a href="https://tianqi.moji.com/nearcity/weather/china/beijing/daxing-district">更多</a>
-        </div>
-        <div class="item clearfix">
-            <ul>
-                <li>
-                    <a href="https://tianqi.moji.com/weather/china/beijing/beijing">北京市</a>
-                </li>
-
-                <li>
-                    <a href="https://tianqi.moji.com/weather/china/beijing/chaoyang-district">北京市朝阳区</a>
-                </li>
-
-                <li>
-                    <a href="https://tianqi.moji.com/weather/china/beijing/tongzhou-district">北京市通州区</a>
-                </li>
-
-                <li>
-                    <a href="https://tianqi.moji.com/weather/china/beijing/changping-district">昌平区</a>
-                </li>
-
-                <li>
-                    <a href="https://tianqi.moji.com/weather/china/beijing/shunyi-district">顺义区</a>
-                </li>
-
-                <li>
-                    <a href="https://tianqi.moji.com/weather/china/beijing/huairou-district">怀柔区</a>
-                </li>
-
-                <li>
-                    <a href="https://tianqi.moji.com/weather/china/beijing/pinggu-district">平谷区</a>
-                </li>
-
-                <li>
-                    <a href="https://tianqi.moji.com/weather/china/beijing/miyun-district">密云区</a>
-                </li>
-
-
-            </ul>
         </div>
     </div>
+
+    <div class="right">
+        <div class="liveview liveview_index" id="id100" >
+            <div class="title">
+                <em>热烈推荐</em>
+                <a href="https://s.taobao.com/search?q=%E7%81%B5%E5%8F%B0%E8%8B%B9%E6%9E%9C&imgfile=&js=1&stats_click=search_radio_all%3A1&initiative_id=staobaoz_20180712&ie=utf8"
+                 target="_blank">更多</a>
+            </div>
+            <div class="item">
+                <ul>
+                    <li  id="id101">
+                        <!--<a href="https://tianqi.moji.com/liveview/picture/81736828">-->
+                        <span>
+                            <img onmouseover="maxPage();"
+                                    data-width="1080"
+                                    data-height="1301"
+                                    src="./image/pingguo_min.jpg" alt="">
+                        </span>
+                            <h2>朝那塬上的一个苹果</h2>
+                        </a>
+                    </li>
+                    <!--<li style="height: 10px"></li>-->
+                    <li  id="id102">
+                        <!--<a href="https://tianqi.moji.com/liveview/picture/81749154">-->
+                        <span>
+                            <img onmouseover="maxPage();"
+                                    data-width="1080"
+                                    data-height="1301"
+                                    src="./image/pingguo_min.jpg" alt="">
+                        </span>
+                            <h2>朝那塬上的另外一个苹果</h2>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--<div style="height: 20px"></div>-->
+
     </div>
+    </div>
+
 </div>
+
+
+
 
 <!--增加地图模块-->
 <div class="wrap clearfix calendar">
@@ -330,9 +249,7 @@
     </div>
     <div class="grid_title clearfix" >
         <ul class="nav nav-tabs">
-            <li role="presentation" id="basic_map" class="active" onclick="basic_map();">基本地图</li>
-            <li role="presentation" onclick="satellite();">卫星地图</li>
-            <li role="presentation" onclick="live_traffic();">实时路况</li>
+            <li role="presentation" id="basic_map" class="active" >基本地图</li>
             <li role="presentation" onclick="tourist();">旅游地图</li>
             <li role="presentation" onclick="heat_map();">热力地图</li>
             <li role="presentation" onclick="bus_map();">公交地图</li>
@@ -359,8 +276,10 @@
 <script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.8&key=2684b4301ac22ebca99fd127c9ddd233"></script>
 
 <script type="text/javascript" src="https://cache.amap.com/lbs/static/addToolbar.js"></script>
+
+<script type="text/javascript" src="./script/index.js"></script>
+
 <!--//引入搜狐定位api-->
-<script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>
 <iframe src="http://miniweb.cntv.cn/hezuo/mo.html" frameborder="0" width="0" height="0" style="display: none; overflow: hidden;"></iframe>
 <div class="foot_box clearfix">
     <div class="foot clearfix">
@@ -428,7 +347,6 @@
             var phone = setTimeout('$("#head_shake").removeClass("shake")',3000);
         }
         var d = new Date();
-        var nowYear = d.getFullYear();
 
         var html = '<p class="text-left">鸣谢&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://tianqi.moji.com/" target="_blank">墨迹天气' +
             '</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.amap.com/" target="_blank" >高德地图</a></p>';
@@ -437,214 +355,6 @@
     })();
 </script>
 <!--============================================以下是我自己写的========================================================-->
-<script>
 
-    //浏览器获取用户位置
-    var map, geolocation,lng,lat;
-    //加载地图，调用浏览器定位服务
-    map = new AMap.Map('container', {
-        resizeEnable: true
-    });
-    map.plugin('AMap.Geolocation', function() {
-        geolocation = new AMap.Geolocation({
-            enableHighAccuracy: true,//是否使用高精度定位，默认:true
-            timeout: 10000,          //超过10秒后停止定位，默认：无穷大
-            buttonOffset: new AMap.Pixel(10, 20),//定位按钮与设置的停靠位置的偏移量，默认：Pixel(10, 20)
-            zoomToAccuracy: true,      //定位成功后调整地图视野范围使定位位置及精度范围视野内可见，默认：false
-            buttonPosition:'RB'
-        });
-        map.addControl(geolocation);
-        geolocation.getCurrentPosition();
-        AMap.event.addListener(geolocation, 'complete', onComplete);//返回定位信息
-        AMap.event.addListener(geolocation, 'error', onError);      //返回定位出错信息
-    });
-    //解析定位结果
-    function onComplete(data) {
-        var str=['定位成功'];
-        str.push('经度：' + data.position.getLng());
-        str.push('纬度：' + data.position.getLat());
-        lng =  data.position.getLng();
-        lat = data.position.getLat();
-        if(data.accuracy){
-            str.push('精度：' + data.accuracy + ' 米');
-        }//如为IP精确定位结果则没有精度信息
-        str.push('是否经过偏移：' + (data.isConverted ? '是' : '否'));
-        document.getElementById('tip').innerHTML = str.join('<br>');
-        code(lng,lat);
-    }
-    //解析定位错误信息
-    function onError(data) {
-        document.getElementById('tip').innerHTML = '定位失败';
-    }
-
-
-    //逆地理编码---------->根据经纬度获取具体的区域信息
-    function code(lng,lat) {
-        map.plugin('AMap.Geocoder', function() {
-            var geocoder = new AMap.Geocoder({
-                // city 指定进行编码查询的城市，支持传入城市名、adcode 和 citycode
-                city: '010'
-            })
-            var lnglat = [lng, lat]
-            geocoder.getAddress(lnglat, function(status, result) {
-                if (status === 'complete' && result.info === 'OK') {
-                    //获取返回的地址对象
-                    var addressComponent = result.regeocode.addressComponent;
-                    //其实这里可以使用formattedAddress直接生成字符
-                    var province = addressComponent.province;
-                    alert(province);
-                    alert(address);
-                }else {
-                    alert("逆解析失败");
-                }
-            })
-        })
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//    var map, geolocation,getLng,getLat;
-//    //加载地图，调用浏览器定位服务
-//    map = new AMap.Map('calendar_grid', {
-//        resizeEnable: true,
-//        zoom:15   //缩放级别
-//    });
-//    map.plugin('AMap.Geolocation', function() {
-//        geolocation = new AMap.Geolocation({
-//            enableHighAccuracy: true,//是否使用高精度定位，默认:true
-//            timeout: 10000,          //超过10秒后停止定位，默认：无穷大
-//            buttonOffset: new AMap.Pixel(10, 20),//定位按钮与设置的停靠位置的偏移量，默认：Pixel(10, 20)
-//            zoomToAccuracy: true,      //定位成功后调整地图视野范围使定位位置及精度范围视野内可见，默认：false
-//            buttonPosition:'RB',
-//            noIpLocate:0
-//        });
-//        map.addControl(geolocation);
-//        geolocation.getCurrentPosition();
-//        AMap.event.addListener(geolocation, 'complete', onComplete);//返回定位信息
-//        AMap.event.addListener(geolocation, 'error', onError);      //返回定位出错信息
-//    });
-//    //解析定位结果
-//    function onComplete(data) {
-//        var str=['定位成功'];
-//        str.push('经度：' + data.position.getLng());
-//        str.push('纬度：' + data.position.getLat());
-//        getLng = data.position.getLng();
-//        getLat = data.position.getLat();
-//        lnglatXY = [getLng, getLat]; //已知点坐标
-//
-//        var geocoder = new AMap.Geocoder({
-//            radius: 1000,
-//            extensions: "all"
-//        });
-//        geocoder.getAddress(lnglatXY, function(status, result) {
-//            alert(lnglatXY);
-//            if (status === 'complete' && result.info === 'OK') {
-//                geocoder_CallBack(result);
-//            }else {
-//                alert("jiexishibai");
-//            }
-//        });
-//        var marker = new AMap.Marker({  //加点
-//            map: map,
-//            position: lnglatXY
-//        });
-//        map.setFitView();
-//    }
-//    function geocoder_CallBack(data) {
-//        var address = data.regeocode.formattedAddress; //返回地址描述
-//        alert(address);
-//    }
-//
-//    function onError() {
-//        layer.msg("地址解析失败");
-//    }
-//
-//
-//
-//
-//    //加载基本的地图信息
-//    function basic_map() {
-//        map = new AMap.Map('calendar_grid', {
-//            resizeEnable: true,
-//            zoom:11
-//        });
-//        map.plugin('AMap.Geolocation', function() {
-//            geolocation = new AMap.Geolocation({
-//                enableHighAccuracy: true,//是否使用高精度定位，默认:true
-//                timeout: 10000,          //超过10秒后停止定位，默认：无穷大
-//                buttonOffset: new AMap.Pixel(10, 20),//定位按钮与设置的停靠位置的偏移量，默认：Pixel(10, 20)
-//                zoomToAccuracy: true,      //定位成功后调整地图视野范围使定位位置及精度范围视野内可见，默认：false
-//                buttonPosition:'RB',
-//                noIpLocate:0
-//            });
-//            map.addControl(geolocation);
-//            geolocation.getCurrentPosition();
-//            AMap.event.addListener(geolocation, 'complete', onComplete);//返回定位信息
-//            AMap.event.addListener(geolocation, 'error', onError);      //返回定位出错信息
-//        });
-//    }
-//
-//    //加载卫星云图
-//    function satellite() {
-//        var satellite = new AMap.TileLayer.Satellite({
-//            zIndex: 10
-//        });
-//        map.add(satellite);
-//        //geolocation();
-//    }
-//    //公交地图
-//    function bus_map() {
-//        layer.alert('暂未开放，看看别的吧', {
-//            skin: 'layui-layer-molv' //样式类名
-//            ,closeBtn: 0
-//            ,icon: 5
-//        });
-//       // geolocation();
-//    }
-//    //旅游地图
-//    function tourist() {
-//        layer.alert('暂未开放，看看别的吧', {
-//            skin: 'layui-layer-molv' //样式类名
-//            ,closeBtn: 0
-//            ,icon: 5
-//        });
-//       // geolocation();
-//    }
-//    //热力地图
-//    function heat_map() {
-//        layer.alert('暂未开放，看看别的吧', {
-//            skin: 'layui-layer-molv' //样式类名
-//            ,closeBtn: 0
-//            ,icon: 5
-//        });
-//       // geolocation();
-//    }
-//    //加载实时路况信息
-//    function live_traffic() {
-//        //实时路况图层
-//        var trafficLayer = new AMap.TileLayer.Traffic({
-//            zIndex: 10
-//        });
-//        map.add(trafficLayer);//添加图层到地图
-//    }
-//
-
-</script>
 </body>
 </html>
