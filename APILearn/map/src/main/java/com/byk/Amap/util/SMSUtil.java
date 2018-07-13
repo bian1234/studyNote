@@ -31,50 +31,40 @@ public class SMSUtil {
      * @todo: 输入一个电话号码，发送短信
      * @param:   * @param null
      */
-    public void sendSMS(String phoneNumber,Map nowMap,Map fetMap) {
+    public void sendSMS(String phoneNumber,Map map) {
         // 短信应用SDK AppID     // 1400开头
-        int appid = 1400101674;
+        int appid = 1444444444;
         // 短信应用SDK AppKey
-        String appkey = "599072c6b8af69616dcf230c96ee603e";
+        String appkey = "AppKey";
         // 短信模板ID，需要在短信应用中申请
-        int templateId = 151299 ;
-        String smsSign = "稚子候门";
-        String city  = nowMap.get("city").toString();
-        String weather = fetMap.get("weather").toString();
+        int templateId = 156072 ;
+        String smsSign = "短信签名";
 
-        String temp1 = fetMap.get("temp1").toString();
-        String temp2 = fetMap.get("temp2").toString();
-        //这里其实是个坑，短信模板上带有“风”字，这里又出现个“风”，所以截取一下，只获取数字即可
-        //下次直接修改模板
-
-
-        String WD = nowMap.get("WD").toString();
-
-        WD = WD.substring(0,WD.length()-1);//str=str.Substring(0,str.Length-i);
-        String WS = nowMap.get("WS").toString();
-        WS = WS.substring(0,WS.length()-1);
+        String city  = map.get("name").toString();
+        String text_day = map.get("text_day").toString();
+        String text_night = map.get("text_night").toString();
+        String low = map.get("low").toString();
+        String high = map.get("high").toString();
+        String wind_direction = map.get("wind_direction").toString();
+        String wind_scale = map.get("wind_scale").toString();
         String msg = "希望天天开心！";
-        //获取到的温度信息是18C这样的姓氏，因此先获取里面的数字
-        try {
-            temp1 = stringUtil.numberIntercept(temp1);
-            temp2 = stringUtil.numberIntercept(temp2);
-        }catch (Exception e){
-            e.printStackTrace();
-        }
         //根据不同的天气情况做一些简单的提示
-        if ((Integer.parseInt(temp1)+Integer.parseInt(temp2)) / 2 < 15){
+        if (Integer.parseInt(low)+Integer.parseInt(high)/ 2 < 20){
             msg = "记得天冷加衣哦！";
-        }if(Integer.parseInt(temp1)/Integer.parseInt(temp2) > 30){
+        }if(Integer.parseInt(high) > 30){
             msg = "注意防晒！";
-        }if (weather.contains("雨")){
+        }if (text_day.contains("雨") || text_night.contains("雨")){
             msg = "下雨记得带伞！";
+        }if (Integer.parseInt(wind_scale) > 5){
+            msg = "远离危险建筑，小心高空坠物！";
+        }if (wind_direction == "无持续风向"){
+            wind_direction = "无持续";
         }
-
         try {
-            String[] params = {city,weather,temp1,temp2,WD,WS,msg};//参数，验证码为5678，30秒内填写
+            String[] params = {city,text_day,text_night,low,high,wind_direction,wind_scale,msg};
             SmsSingleSender ssender = new SmsSingleSender(appid, appkey);
             SmsSingleSenderResult result = ssender.sendWithParam("86", phoneNumber,
-                    templateId, params, smsSign, "", "");  // 签名参数未提供或者为空时，会使用默认签名发送短信
+                    templateId, params, smsSign, "", "");
             logger.info(result.toString());
         } catch (HTTPException e) {
             // HTTP响应码错误

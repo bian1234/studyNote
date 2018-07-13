@@ -24,14 +24,17 @@ public class WeatherService {
 
 
     //根据城市名查询天气信息并发送短信
-    public void sendWeatherBySMS01(String cityId,String phoneNumber){
+    public void sendWeatherBySMS01(String cityName,String phoneNumber){
         try {
-            Map nowMap = weatherUtil.getTodayWeather1(cityId);
-            Map fetMap = weatherUtil.getTodayWeather2(cityId);
-            smsUtil.sendSMS(phoneNumber,nowMap,fetMap);
+            Map map = weatherUtil.getTodayWeatherMap(cityName);
+            System.out.println(map);
+            smsUtil.sendSMS(phoneNumber,map);
+
         }catch (Exception e){
             e.printStackTrace();
         }
 
     }
+
+
 }

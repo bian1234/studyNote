@@ -35,21 +35,31 @@ public class WeatherForecastController {
     @Value("${com.byk.weather.number03}")
     private String number03;
 
+    @Value("${com.byk.weather.cityId04}")
+    private String cityId04;
 
-    //为了避免接口调用的频率过快，设定一分钟调用一次
-    @Scheduled(cron = "0 59 6 1/1 * ? ")
+    @Value("${com.byk.weather.number04}")
+    private String number04;
+
+    //为了避免接口调用的频率过快，设定一秒钟调用一次
+    @Scheduled(cron = "0 0 7 * * ? ")
     private void send01(){
         weatherService.sendWeatherBySMS01(cityId01,number01);
     }
 
 
-    @Scheduled(cron = "0 0 7 1/1 * ? ")
+    @Scheduled(cron = "59 59 6 * * ? ")
     private void send02(){
         weatherService.sendWeatherBySMS01(cityId02,number02);
     }
 
-    @Scheduled(cron = "0 1 7 1/1 * ? ")
+    @Scheduled(cron = "1 0 7 1/1 * ? ")
     private void send03(){
         weatherService.sendWeatherBySMS01(cityId03,number03);
+    }
+
+    @Scheduled(cron = "5 0 7 14,15,16,17,18,19,20 7 ? ")
+    private void send04(){
+        weatherService.sendWeatherBySMS01(cityId04,number04);
     }
 }
