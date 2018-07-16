@@ -36,7 +36,7 @@ public class WeatherUtil {
     public  Map getTodayWeatherMap(String cityName)
             throws IOException, NullPointerException {
         // 连接新知天气的api
-        URL url = new URL("https://api.seniverse.com/v3/weather/daily.json?ts=1531466740671&ttl=30&uid=U55CA5FEBC&sig=WaueiPRGgqRvbHwVwY0P5pnYEHs%3D&location="+cityName+"&language=zh-Hans&unit=c&start=0&days=1");
+        URL url = new URL("你刚才生成的url");
         URLConnection connectionData = url.openConnection();
         connectionData.setConnectTimeout(2000);
         Map map = new HashMap();
