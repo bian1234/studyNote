@@ -10,5 +10,5 @@ import java.util.Map;
 
 public interface TokenService {
 
-    public Map getToken(String clientId,String clientSecret);
+    public Map getToken();
 }

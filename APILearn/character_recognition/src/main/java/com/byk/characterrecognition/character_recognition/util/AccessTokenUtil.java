@@ -53,10 +53,5 @@ public class AccessTokenUtil {
         return token;
     }
 
-//    public static  void main(String[] arg){
-//        Map map = AccessTokenUtil.getToken();
-//        System.out.println(map);
-//        System.out.println(map.get("access_token"));
-//        System.out.println(map.get("expires_in"));
-//    }
+
 }

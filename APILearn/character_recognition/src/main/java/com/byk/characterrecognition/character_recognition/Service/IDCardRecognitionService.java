@@ -1,5 +1,8 @@
 package com.byk.characterrecognition.character_recognition.Service;
 
+import com.byk.characterrecognition.character_recognition.entity.IDCardBlack;
+import com.byk.characterrecognition.character_recognition.entity.IDCardFront;
+
 import java.util.Map;
 
 /**
@@ -14,10 +17,10 @@ public interface IDCardRecognitionService {
     /**
      * 识别人像面
      * */
-    public Map IDCardRecognitionFront(String imageUrl,String clientId,String clientSecret);
+    public   IDCardFront IDCardRecognitionFront(String imageUrl, String clientId, String clientSecret);
 
     /**
      * 识别国徽面
      * */
-    public Map IDCardRecognitionBlack(String imageUrl,String clientId,String clientSecret);
+    public IDCardBlack IDCardRecognitionBlack(String imageUrl, String clientId, String clientSecret);
 }

@@ -1,5 +1,7 @@
 package com.byk.characterrecognition.character_recognition.util;
 
+import com.byk.characterrecognition.character_recognition.entity.IDCardFront;
+import com.byk.characterrecognition.character_recognition.entity.IDCardVO;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
@@ -16,13 +18,13 @@ import java.util.Map;
  */
 public class HttpUtil {
 
-    public static String post(String requestUrl, String accessToken, String params)
+    public static JSONObject post(String requestUrl, String accessToken, String params)
             throws Exception {
         String contentType = "application/x-www-form-urlencoded";
         return HttpUtil.post(requestUrl, accessToken, contentType, params);
     }
 
-    public static String post(String requestUrl, String accessToken, String contentType, String params)
+    public static JSONObject post(String requestUrl, String accessToken, String contentType, String params)
             throws Exception {
         String encoding = "UTF-8";
         if (requestUrl.contains("nlp")) {
@@ -31,13 +33,17 @@ public class HttpUtil {
         return HttpUtil.post(requestUrl, accessToken, contentType, params, encoding);
     }
 
-    public static String post(String requestUrl, String accessToken, String contentType, String params, String encoding)
+    public static JSONObject post(String requestUrl, String accessToken, String contentType, String params, String encoding)
             throws Exception {
         String url = requestUrl + "?access_token=" + accessToken;
-        return HttpUtil.postGeneralUrl(url, contentType, params, encoding);
+        return HttpUtil.postGeneralUrlFront(url, contentType, params, encoding);
     }
 
-    public static String postGeneralUrl(String generalUrl, String contentType, String params, String encoding)
+
+    /**
+     * 自定义
+     * */
+    public static JSONObject postGeneralUrlFront(String generalUrl, String contentType, String params, String encoding)
             throws Exception {
         URL url = new URL(generalUrl);
         // 打开和URL之间的连接
@@ -49,7 +55,6 @@ public class HttpUtil {
         connection.setUseCaches(false);
         connection.setDoOutput(true);
         connection.setDoInput(true);
-
         // 得到请求的输出流对象
         DataOutputStream out = new DataOutputStream(connection.getOutputStream());
         out.write(params.getBytes(encoding));
@@ -71,17 +76,9 @@ public class HttpUtil {
         }
         String datas = sb.toString();
         JSONObject jsonData = JSONObject.fromObject(datas);
-        Object
-        System.out.println("===================="+jsonData.get("words_result"));
-
-        //返回的是一个JSONArray，数组形式
-       /*Array results = jsonData.get
-        for (int i = 0;i<results.size();i++){
-            System.out.println("==============="+results.get(i));
-        }*/
+        JSONObject wordsResult = jsonData.getJSONObject("words_result");
         in.close();
-//        System.err.println("result:" + result);
-//        return result;
-        return null;
+
+        return wordsResult;
     }
 }
