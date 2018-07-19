@@ -19,6 +19,7 @@ import java.util.Map;
  * @Todo: 身份证识别的控制类
  */
 @Controller
+@RequestMapping("/baiduAI")
 public class CharacterRecognitionContrller extends BaseController{
 
     @RequestMapping("/index")
