@@ -3,6 +3,7 @@ package com.byk.baiduaidemo.formRecognition.controller;
 import com.byk.baiduaidemo.common.controller.BaseController;
 import com.byk.baiduaidemo.common.service.AccessTokenService;
 import com.byk.baiduaidemo.formRecognition.service.FormRecognitionService;
+import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -41,12 +42,18 @@ public class FormRecognitionController extends BaseController {
         Map requestMap = formRecognitionService.formPost(imageUrl,accessToken);
         String requestId = requestMap.get("requestId").toString();
         try {
-            TimeUnit.MINUTES.sleep(1);//分
-            formRecognitionService.getResult(requestId,type,accessToken);
+            int retCode;
+            Map reponseMap;
+            do{
+                reponseMap = formRecognitionService.getResult(requestId,type,accessToken);
+                JSONObject result = (JSONObject)reponseMap.get("result");
+                retCode = Integer.parseInt(result.get("ret_code").toString());
+                TimeUnit.SECONDS.sleep(1);
+            }while (retCode < 3);
+            return reponseMap;
         }catch (Exception e){
             e.printStackTrace();
         }
-
         return null;
     }
 }

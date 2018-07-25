@@ -53,9 +53,9 @@ public class FormRecognitionServiceImpl  implements FormRecognitionService {
         try {
             String params = "request_id="+requestId+"&result_type"+resultType;
             JSONObject jsonData = HttpUtil.post(otherHost, accessToken, params);
-            JSONObject jsonObject = jsonData.getJSONObject("result");
-            System.out.println("=========="+jsonObject);
-            return  null;
+            JSONObject result = jsonData.getJSONObject("result");
+            map.put("result",result);
+            return  map;
         } catch (Exception e) {
             e.printStackTrace();
         }
